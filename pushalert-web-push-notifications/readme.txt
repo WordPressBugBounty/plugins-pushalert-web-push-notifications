@@ -3,7 +3,7 @@ Contributors: PushAlert
 Donate link: https://pushalert.co/
 Tags: push notifications, pushalert, chrome, firefox, browser notification, mobile push notification, web push notification, chrome push, safari push, firefox push, mobile notifications, desktop notification, android push, android notifications, woocommerce, abandoned cart recovery, in-stock notifications, price drop alerts, shipment notifications, recover woocommerce cart, abandon cart, increase sales with woocommerce
 Requires at least: 2.7
-Tested up to: 6.6
+Tested up to: 6.7
 Stable tag: 2.8.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
