@@ -5,7 +5,7 @@
  * Description: PushAlert is a user-engagement and retention platform to increase reach and sales on your WordPress Website and WooCommerce Store, allowing you to push real-time notifications to your website users on both mobile and desktop.
  * Author: PushAlert
  * Author URI: https://pushalert.co
- * Version: 2.8.1
+ * Version: 2.8.2
  */
 
 add_action('admin_init', 'pushalert_admin_init');
@@ -45,7 +45,6 @@ if (isPAWooCommerceEnable()) {
         add_action('woocommerce_add_to_cart', 'pa_custom_updated_cart');
         add_action('woocommerce_cart_item_removed', 'pa_custom_updated_cart');
         add_action('woocommerce_after_cart_item_quantity_update', 'pa_custom_updated_cart');
-        add_action('woocommerce_before_cart_item_quantity_zero', 'pa_custom_cart_quantity_zero');
         add_action('woocommerce_cart_is_empty', 'pa_custom_updated_cart');
         add_action('woocommerce_order_status_changed', 'pa_custom_order_completed', 10, 3);
     }
@@ -935,16 +934,6 @@ function pa_custom_updated_cart(){
             pa_init_abandoned_cart();
         }
     }
-}
-
-function pa_custom_cart_quantity_zero($cart_item_key){
-
-    $total_items = WC()->cart->get_cart_contents_count();
-    if($total_items-1>0){
-        //pa_clear_abandoned_cart();
-        pa_init_abandoned_cart($total_items-1);
-    }
-    //else case is handled by woocommerce_cart_is_empty
 }
 
 function pa_custom_order_completed($order_id, $old_status, $new_status){
