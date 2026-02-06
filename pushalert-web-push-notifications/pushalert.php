@@ -5,7 +5,7 @@
  * Description: PushAlert is a user-engagement and retention platform to increase reach and sales on your WordPress Website and WooCommerce Store, allowing you to push real-time notifications to your website users on both mobile and desktop.
  * Author: PushAlert
  * Author URI: https://pushalert.co
- * Version: 2.8.2
+ * Version: 2.9.0
  */
 
 add_action('admin_init', 'pushalert_admin_init');
@@ -258,7 +258,7 @@ function pushalert_append_js() {
         $pushalert_enable_auto_sw_manifest = get_option('_pushalert_enable_auto_sw_manifest', false);
 
     	?>
-        <!-- PushAlert WordPress 2.5.4 -->
+        <!-- PushAlert WordPress 2.9.0 -->
         <script type="text/javascript">
         <?php
             if($pushalert_enable_auto_sw_manifest && $pushalert_config_id && $pushalert_config_id!="" && $pushalert_config_id!="false"){
@@ -268,12 +268,14 @@ function pushalert_append_js() {
         	if($pushalert_enable_auto_sw_manifest && $pushalert_config_id && $pushalert_config_id!="" && $pushalert_config_id!="false"){
                 echo "var pushalert_manifest_file = 'https://cdn.pushalert.co/manifest-".$pushalert_config_id.".json';".PHP_EOL;
         	}
+        
+            $script_url = strpos($pushalert_web_id, "unified") === 0?"https://cdn.pushalert.co/".esc_html($pushalert_web_id).".js":"//cdn.pushalert.co/integrate_".esc_html($pushalert_web_id).".js";
     	?>
 
             (function (d, t) {
                 var g = d.createElement(t),
                         s = d.getElementsByTagName(t)[0];
-                g.src = "//cdn.pushalert.co/integrate_<?php echo $pushalert_web_id ?>.js";
+                g.src = "<?php echo $script_url ?>";
                 s.parentNode.insertBefore(g, s);
             }(document, "script"));
         </script>

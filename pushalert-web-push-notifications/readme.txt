@@ -3,8 +3,8 @@ Contributors: PushAlert
 Donate link: https://pushalert.co/
 Tags: push notifications, pushalert, chrome, firefox, browser notification, mobile push notification, web push notification, chrome push, safari push, firefox push, mobile notifications, desktop notification, android push, android notifications, woocommerce, abandoned cart recovery, in-stock notifications, price drop alerts, shipment notifications, recover woocommerce cart, abandon cart, increase sales with woocommerce
 Requires at least: 2.7
-Tested up to: 6.8
-Stable tag: 2.8.2
+Tested up to: 6.9
+Stable tag: 2.9.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -83,6 +83,9 @@ If you are using any custom shipment plugin (other than WooCommerce Shipment Tra
 7. WooCommerce Price Drop and In-Stock Notifications
 
 == Changelog ==
+
+= 2.9.0 =
+* Added support for Unified integration.
 
 = 2.8.1 =
 * Added support for Product Name in abandoned cart notifications.
